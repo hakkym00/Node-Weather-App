@@ -5,6 +5,8 @@ const hbs = require('hbs');
 const openweathermap = require('./openweather');
 
 const app = express();
+
+const port = process.env.PORT || 3000;
 // pathe to public and views directory (express config)
 const publicDirectoryPaths = path.join(__dirname , '../public')
 const viewDirectoryPath = path.join(__dirname, '../template/views')
@@ -61,11 +63,7 @@ app.get('/weather', (req, res) => {
      
      })
      
-    // res.send({
-    //     forcast: '20 degs',
-    //     location: 'lekki',
-    //     address: req.query.address
-    // })
+    
 })
 
 app.get('/help/*', (req, res) => {
@@ -84,6 +82,6 @@ app.get('*', (req, res) => {
      })
 })
 
-app.listen('3000', () => {
-    console.log('Your server is up and running on port 3000')
+app.listen(port, () => {
+    console.log('Your server is up and running on port ' + port)
 })
