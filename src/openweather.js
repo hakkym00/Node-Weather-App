@@ -19,7 +19,7 @@ const openweathermap = (address, callback) => {
                    callback('Unable To Get Data For That Location. Try Again With A Nearby Location' , undefined)
                }else{
                     const responseBody = response.body
-                    callback(undefined, `${responseBody.name} in the country of ${responseBody.sys.country}, With temperature of ${responseBody.main.temp}°c which feels-like ${responseBody.main['feels_like']}°c , also ${responseBody.weather[0].description}, with pressure of ${responseBody.main.pressure}hPa , humidity of ${responseBody.main.humidity}%  and ${responseBody.rain['1h']}% precipitation within an hour`)      
+                    callback(undefined, `${responseBody.name} in the country of ${responseBody.sys.country}, With temperature of ${responseBody.main.temp}°c which feels-like ${responseBody.main['feels_like']}°c , also ${responseBody.weather[0].description}, with pressure of ${responseBody.main.pressure}hPa and humidity of ${responseBody.main.humidity}% `)      
                }
                    
                
